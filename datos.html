@@ -1,0 +1,175 @@
+<ion-view title="Mis Datos" id="datos">
+  <ion-content padding="true" class="has-header">
+
+
+    <!--<div id="div_subir_foto">
+      <form name="upload" ng-submit="uploadFile(file)">
+            <div class="files_s"><input id="files" type="file" accept="image/*;capture=camera" name="file" uploader-model="file" /></div>
+            <button class="botonpersonalizado">Cambiar foto</button>
+      </form>
+   </div>-->
+
+   <div style="margin:0 auto; width:30%!important;text-align: center;">
+       <img src="img/cam2.png" id='img' style="width: 100px; height: 100px;">
+   </div><br/>
+
+   <div style="width:100%; text-align:center; padding:10px;">
+       <button id="tomarfoto" ng-click='tomarfoto()'>Foto <i class="ion-ios-camera"></i></button>
+       <button id="select" ng-click='selectfoto()'>Galería <i class="ion-ios-folder"></i></button>
+   </div>
+
+   <div id="div_ver_foto">
+     <img src="http://app.persone.eu/app/ImagenUsuario/{{imagen}}">
+  </div>
+
+<div id="div_ver_fotoA3">
+    <img src="data:image/jpeg;base64,{{imagena3}}"/>
+ </div>
+
+<div class="list" >
+
+  <a id="Nombre" class="item " href="">
+    <span  class="etiquetainput">NOMBRE</span>
+    <p><input class="inputcambios" type="text" ng-model="Nombre"  ></p>
+  </a>
+
+  <a id="Apellido1" class="item " href="">
+    <span  class="etiquetainput">1º APELLIDO</span>
+    <p><input class="inputcambios" type="text"  ng-model="Apellidos1"  ></p>
+  </a>
+
+  <a id="Apellido2" class="item " href="">
+    <span  class="etiquetainput">2º APELLIDO</span>
+    <p><input class="inputcambios" type="text"  ng-model="Apellidos2"  ></p>
+  </a>
+
+  <a id="Apellido2" class="item " href="">
+    <span  class="etiquetainput">1º TELÉFONO</span>
+    <p><input class="inputcambios" type="text"  ng-model="telefono1"  ></p>
+  </a>
+
+  <a id="Apellido2" class="item " href="">
+    <span  class="etiquetainput">2º TELÉFONO</span>
+    <p><input class="inputcambios" type="text"  ng-model="telefono2"  ></p>
+  </a>
+
+  <a id="Apellido2" class="item " href="">
+    <span  class="etiquetainput">Direccion</span>
+    <p><input class="inputcambios" type="text"  ng-model="Direccion"  ></p>
+  </a>
+
+  <a id="Numero" class="item " href="">
+    <span  class="etiquetainput">Número</span>
+    <p><input class="inputcambios" type="text"  ng-model="numero"  ></p>
+  </a>
+
+  <a id="Escalera" class="item " href="">
+    <span  class="etiquetainput">Escalera</span>
+    <p><input class="inputcambios" type="text"  ng-model="escalera"  ></p>
+  </a>
+
+  <a id="Piso" class="item " href="">
+    <span  class="etiquetainput">Piso</span>
+    <p><input class="inputcambios" type="text"  ng-model="piso"></p>
+  </a>
+
+  <a id="Puerta" class="item " href="">
+    <span  class="etiquetainput">Puerta</span>
+    <p><input class="inputcambios" type="text"  ng-model="puerta"></p>
+  </a>
+
+  <h2 style='color:white;'>Fecha de nacimiento</h2>
+    <span  class="etiquetainput">Día</span>
+    <p><input class="inputcambios" type="number" id='dianacimiento' value='{{dia}}'></p>
+    <span class="etiquetainput">Mes</span>
+    <select class="inputper" id="mesdesde">
+      <option value='01' >Enero</option>
+      <option value='02' >Febrero</option>
+      <option value='03' >Marzo</option>
+      <option value='04' >Abril</option>
+      <option value='05' >Mayo</option>
+      <option value='06' >Junio</option>
+      <option value='07' >Julio</option>
+      <option value='08' >Agosto</option>
+      <option value='09' >Septiembre</option>
+      <option value='10' >Octubre</option>
+      <option value='11' >Noviembre</option>
+      <option value='12' >Diciembre</option>
+    </select>
+    <span  class="etiquetainput">Año</span>
+    <p><input class="inputcambios" type="number" id='anonacimiento'  value='{{ano}}'></p>
+  </a>
+
+
+  <a class="item "  href="">
+    <span class="etiquetainput">1º EMAIL</span>
+    <p>{{Email}}</p>
+  </a>
+
+  <a class="item "  href="">
+    <span class="etiquetainput">2º EMAIL</span>
+    <p>{{Email2}}</p>
+  </a>
+
+    <a class="item "  href="">
+      <span class="etiquetainput">DNI/NIE</span>
+      <p>{{DNI}}</p>
+    </a>
+
+
+    <a id="Puerta" class="item " href="">
+      <span  class="etiquetainput">Nacionalidad</span>
+      <p>{{Pais}}</p>
+    </a>
+
+
+    <a id="Puerta" class="item " href="">
+      <span  class="etiquetainput">Provincia</span>
+      <p>{{provincia}}</p>
+    </a>
+
+      <a id="Puerta" class="item " href="">
+      <span  class="etiquetainput">Localidad</span>
+      <p>{{localidad}}</p>
+    </a>
+
+
+    <a id="Piso" class="item " href="">
+      <span  class="etiquetainput">Municipio</span>
+      <p>{{municipio}}</p>
+    </a>
+
+    <button id="registro_si" ng-click=cambiar_nacionalidad() class="botonpersonalizado">
+      Modificar Nacionalidad
+    </button>
+
+    <button id="registro_si" ng-click=modificiar_region() class="botonpersonalizado">
+      Modificar Provincia y localidad
+    </button>
+
+    <button id="registro_si" ng-click=modificar_municipio() class="botonpersonalizado">
+      Modificar Municipio
+    </button>
+
+    <div class="error">{{error}}</div>
+
+    <button id="registro_si" ng-click=cambiar_datos(Nombre,Apellidos1,Apellidos2,telefono1,telefono2,numero,escalera,piso,puerta,Direccion) class="botonpersonalizado">
+      GUARDAR NUEVOS DATOS
+    </button>
+
+    <button id="registro_si" ng-click=cambiar_pass() class="botonpersonalizado">
+      Cambiar Contraseña
+    </button>
+
+
+
+</div>
+
+<h4 style="text-align:center;color:white;" class="titulologin">{{mensaje}}</h4>
+
+
+
+
+
+</ion-content>
+</ion-view>
